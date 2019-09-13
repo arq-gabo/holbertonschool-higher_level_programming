@@ -9,13 +9,13 @@ if __name__ == "__main__":
         if op == '+':
             print("{} + {} = {}".format(a, b, add(a, b)))
             exit(0)
-        elif op  == '-':
+        elif op == '-':
             print("{} - {} = {}".format(a, b, sub(a, b)))
             exit(0)
-        elif op  == '*':
+        elif op == '*':
             print("{} * {} = {}".format(a, b, mul(a, b)))
             exit(0)
-        elif op  == '/':
+        elif op == '/':
             print("{} / {} = {}".format(a, b, div(a, b)))
             exit(0)
         else:
