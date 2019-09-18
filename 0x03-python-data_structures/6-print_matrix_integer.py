@@ -6,7 +6,7 @@ def print_matrix_integer(matrix=[[]]):
             r_space = len(y)
             z += 1
             if z != r_space:
-                print(x, end=' ')
+                print("{:d}".format(x), end=' ')
             else:
-                print(x, end='')
+                print("{:d}".format(x), end='')
         print()
