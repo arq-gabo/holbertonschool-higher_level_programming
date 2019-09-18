@@ -4,6 +4,6 @@ def multiple_returns(sentence):
     if lgth > 0:
         first_char = sentence[0]
     else:
-        "None"
+        None
     tup = lgth, first_char
-    return tup
+    return(tup)
