@@ -11,7 +11,7 @@ class Square:
         """size"""
         return self.__size
 
-    @size.setter    
+    @size.setter
     def size(self, value):
         """"Exception Error"""
         if type(value) is int:
