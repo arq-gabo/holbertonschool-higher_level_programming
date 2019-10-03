@@ -35,8 +35,9 @@ class Square:
             if len(value) is not 2:
                 raise TypeError(mesg_err)
             else:
-                if value[0] < 0 and value[1] < 0:
-                    raise TypeError(mesg_err)
+                for a in range(len(value)):
+                    if value[a] < 0:
+                        raise TypeError(mesg_err)
             self.__position = value
         else:
             raise TypeError(mesg_err)
