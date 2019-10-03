@@ -49,14 +49,14 @@ class Square:
     def my_print(self):
         """function for print square"""
         if self.size is 0:
-            print()
+            print('')
         else:
             for a in range(self.__position[1]):
-                print()
+                print('')
             for colums in range(self.__size):
                 for lines in range(self.size + self.__position[0]):
                     if lines < self.__position[0]:
                         print(" ", end='')
                     else:
                         print("#", end='')
-                print()
+                print('')
