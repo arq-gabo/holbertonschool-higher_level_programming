@@ -1,0 +1,62 @@
+The ``0-add_integer`` module
+============================
+
+Using ``add_integer``
+---------------------
+
+This is an example text file in reStructuredText format. First import
+``add_integer`` from the ``0-add_integer`` module:
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Check a simple sum
+>>> add_integer(5, 20)
+25
+
+
+Check when vale a is positive and value b is negative
+>>> add_integer(50, -2)
+48
+
+
+Check when boot value is negative
+>>> add_integer(-4, -7)
+-11
+
+
+Check when two values are float
+>>> add_integer(2.672, 7.564)
+9
+
+
+Check when a value a is a big value
+>>> add_integer(999999999, 1)
+1000000000
+
+
+Check when is a integer more boolean value
+>>> print(add_integer(3, True))
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+
+Check when value a is a integer and value b is other type value
+>>> add_integer(6, [1, 2, 3, 4, 5])
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+
+Check when argument of function is empty
+>>> add_integer()
+Traceback (most recent call last):
+...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+
+When the function has more than 3 arguments
+>>> add_integer(1, 2, 3)
+Traceback (most recent call last):
+...
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
