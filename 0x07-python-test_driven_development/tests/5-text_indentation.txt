@@ -1,0 +1,33 @@
+The ``5-text_indentation`` module
+============================
+
+Using ``text_indentation``
+---------------------
+
+This is an example text file in reStructuredText format. First import
+``text_indentation`` from the ``5-text_indentation``
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test Case:
+
+
+When the argument of function is empty
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+
+When the argument is a integer
+>> text_indentation(1)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+
+When the argument have a argument not defined
+>>> text_indentation(blablabla)
+Traceback (most recent call last):
+...
+NameError: name 'blablabla' is not defined
