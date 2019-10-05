@@ -1,0 +1,46 @@
+The ``3-say_my_name`` module
+============================
+
+Using ``3-say_my_name.txt``
+---------------------
+
+This is an example text file in reStructuredText format. First import
+``say_my_name`` from the ``3-say_my_name.txt`` module:
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test Case
+___________________________________
+
+
+Check with two argument whit type value string
+>>> say_my_name("Jose", "Guerra")
+My name is Jose Guerra
+
+
+Check with boolen value and string value
+>>> say_my_name(True, "Guerra")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+
+Check with string value and list value
+>>> say_my_name("Jose", ["Guerra"])
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+
+Check with tree arguments
+>>> say_my_name("Jose", "Gabriel", "Guerra")
+Traceback (most recent call last):
+...
+TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+
+Check with a tring value and integer value
+>>> say_my_name("Jose", 1)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
