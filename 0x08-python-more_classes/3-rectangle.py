@@ -49,11 +49,11 @@ class Rectangle:
 
     def __str__(self):
         """Method to build the string with the "#" character"""
-        if self.width is 0 or self.height is 0:
-            return(0)
-        else:
-            new_str = ""
 
+        new_str = ""
+        if self.width is 0 or self.height is 0:
+            return new_str
+        else:
             for a in range(self.height):
                 new_str += "#" * self.width
                 if a + 1 < self.height:
