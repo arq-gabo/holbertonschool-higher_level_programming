@@ -9,18 +9,16 @@ def text_indentation(text):
         """Conditional for value is string"""
         raise TypeError("text must be a string")
     else:
-        pass
-
-    new_txt = str(text)
-    new_line = False
-    for a in new_txt:
-        if new_line:
-            if a is " ":
-                continue
-            new_line = False
-        if a is "." or a is "?" or a is ":":
-            print(a)
-            print("")
-            new_line = True
-        else:
-            print(a, end='')
+        new_txt = str(text)
+        new_line = False
+        for a in new_txt:
+            if new_line:
+                if a is " ":
+                    continue
+                new_line = False
+            if a is "." or a is "?" or a is ":":
+                print(a)
+                print("")
+                new_line = True
+            else:
+                print(a, end='')
