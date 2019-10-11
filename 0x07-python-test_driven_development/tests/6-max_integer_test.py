@@ -8,6 +8,10 @@ max_integer = __import__('6-max_integer').max_integer
 
 class TestMaxInteger(unittest.TestCase):
     """Presence of docstring"""
+
+    def test_max_at_the_beginning(self):
+        self.assertEqual(max_integer([8, 6, 4, 2]), 8)
+
     def test_basic_case(self):
         self.assertEqual(max_integer([1, 2, 3, 8]), 8)
 
