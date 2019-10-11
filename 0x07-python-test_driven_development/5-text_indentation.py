@@ -11,7 +11,6 @@ def text_indentation(text):
     else:
         pass
 
-
     new_txt = str(text)
     new_line = False
     for a in new_txt:
