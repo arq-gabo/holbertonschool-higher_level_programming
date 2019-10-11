@@ -5,7 +5,6 @@ def text_indentation(text):
     Indentation of a text separated by special characters
     """
 
-
     if type(text) is not str or text is None or len(text) < 0:
         """Conditional for value is string"""
         raise TypeError("text must be a string")
