@@ -18,7 +18,7 @@ class Rectangle(BaseGeometry):
     """Class that inherits methods of class BaseGeometry"""
     def __init__(self, width, height):
         """Method for validate values of with and height"""
-        BaseGeometry.integer_validator(self, width, height)
-        BaseGeometry.integer_validator(self, width, height)
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
         self.__width = width
         self.__height = height
