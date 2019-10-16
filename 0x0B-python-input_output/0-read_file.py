@@ -2,4 +2,4 @@
 def read_file(filename=""):
     """function por read the file .txt"""
     with open(filename, "r", encoding="utf-8") as read_file:
-        print(read_file.read())
+        print(read_file.read(), end='')
