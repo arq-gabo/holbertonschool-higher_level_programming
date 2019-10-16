@@ -15,9 +15,9 @@ class BaseGeometry:
             raise ValueError("{} must be greater than 0".format(name))
 
 class Rectangle(BaseGeometry):
-    """"""
+    """Class that inherits methods of class BaseGeometry"""
     def __init__(self, width, height):
-        """"""
+        """Method for validate values of with and height"""
         BaseGeometry.integer_validator(self, width, height)
         BaseGeometry.integer_validator(self, width, height)
         self.__width = width
