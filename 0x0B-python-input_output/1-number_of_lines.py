@@ -6,4 +6,3 @@ def number_of_lines(filename=""):
         for j in f:
             i += 1
         return i
-            
