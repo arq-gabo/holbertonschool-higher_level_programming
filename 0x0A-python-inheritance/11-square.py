@@ -3,6 +3,7 @@ class BaseGeometry:
     """Class BaseGeometry for a method with public instance"""
     pass
 
+
     def area(self):
         """method for area public instance"""
         raise Exception("area() is not implemented")
@@ -31,6 +32,7 @@ class Rectangle(BaseGeometry):
     def __str__(self):
         """return string message"""
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
+
 
 class Square(Rectangle):
     """ Square Class """
