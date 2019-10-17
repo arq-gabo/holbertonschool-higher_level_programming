@@ -8,10 +8,10 @@ class Student:
 
     def __init__(self, first_name, last_name, age):
         """Init method initialization"""
-        self.first_name = firts_name
+        self.first_name = first_name
         self.last_name = last_name
-        self.age_name = age
+        self.age = age
 
     def to_json(self):
         """Method to json"""
-        return obj.__dict__
+        return self.__dict__
