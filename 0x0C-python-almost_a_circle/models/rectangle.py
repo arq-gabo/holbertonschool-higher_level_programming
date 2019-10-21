@@ -27,6 +27,14 @@ class Rectangle(Base):
         for i in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
 
+    def update(self, *args):
+        """Method for update class Rectangle with *args"""
+        new_list = ["id", "_Rectangle__width", "_Rectangle__height",
+                    "_Rectangle__x", "_Rectangle__y"]
+
+        for num, val in enumerate(args):
+            self.__dict__[new_list[num]] = val
+
     def __str__(self):
         """Metod for anulate __str__"""
         a = "Rectangle"
