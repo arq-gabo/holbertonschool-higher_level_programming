@@ -17,41 +17,81 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
-        @property
-        def width(self):
-            """Method width"""
-            return self.__width
+    def area(self):
+        """Method for calculate area"""
+        return self.__width * self.__height
 
-        @width.setter
-        def width(self, width):
-            """Method Setter Width"""
+    def display(self):
+        """Method for display a accsi character"""
+        for i in range(self.__height):
+            print("#" * self.__width)
+
+    def __str__(self):
+        """Metod for anulate __str__"""
+        a = "Rectangle"
+        b = self.id
+        c = self.__x
+        d = self.__y
+        e = self.__width
+        f = self.__height
+        return("[{}] ({}) {}/{} - {}/{}".format(a, b, c, d, e, f))
+
+    @property
+    def width(self):
+        """Method width"""
+        return self.__width
+
+    @width.setter
+    def width(self, width):
+        """Method Setter for validate value width"""
+        if type(width) is not int:
+            raise TypeError("width must be an integer")
+        elif width <= 0:
+            raise ValueError("width must be > 0")
+        else:
             self.__width = width
 
-        @property
-        def height(self):
-            """Method height"""
-            return self.__width
+    @property
+    def height(self):
+        """Method height"""
+        return self.__width
 
-        @height.setter
-        def height(self, height):
-            """Method Setter Height"""
+    @height.setter
+    def height(self, height):
+        """Method Setter for validate value height"""
+        if type(height) is not int:
+            raise TypeError("height must be an integer")
+        elif height <= 0:
+            raise ValueError("height must be > 0")
+        else:
             self.__height = height
 
-        @property
-        def x(self):
-            """Method x"""
-            return self.__x
+    @property
+    def x(self):
+        """Method x"""
+        return self.__x
 
-        @x.setter
-        def x(self, x):
+    @x.setter
+    def x(self, x):
+        """Method setter for validate value x"""
+        if type(x) is not int:
+            raise TypeError("x must be an integer")
+        elif x < 0:
+            raise ValueError("x must be >= 0")
+        else:
             self.__x = x
 
-        @property
-        def y(self):
-            return self.__y
+    @property
+    def y(self):
+        """Method y"""
+        return self.__y
 
-        @y.setter
-        def y(self, y):
+    @y.setter
+    def y(self, y):
+        """Method setter for validate value y"""
+        if type(y) is not int:
+            raise TypeError("y must be an integer")
+        if y < 0:
+            raise ValueError("y must be >= 0")
+        else:
             self.__y = y
-
-            
