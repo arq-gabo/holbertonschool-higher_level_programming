@@ -32,7 +32,7 @@ class Square(Rectangle):
     def __str__(self):
         """Method fot anulate __str__"""
         return("[Square] ({}) {}/{} - {}".format(self.id,
-                self.x, self.y, self.width))
+               self.x, self.y, self.width))
 
     def update(self, *args, **kwargs):
         """Method for update class square with *args **kwargs"""
@@ -55,3 +55,11 @@ class Square(Rectangle):
                 else:
                     self.height = value
                     self.width = value
+
+    def to_dictionary(self):
+        """Method for return square dictionary"""
+        nw_dict = Rectangle.to_dictionary(self)
+        nw_dict["size"] = nw_dict["width"]
+        del nw_dict["height"]
+        del nw_dict["width"]
+        return nw_dict
