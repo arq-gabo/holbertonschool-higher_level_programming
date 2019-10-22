@@ -26,10 +26,10 @@ class Square(Rectangle):
         elif size <= 0:
             raise ValueError("width must be > 0")
         else:
-            self.size = width
-            self.size = height
+            self.width = size
+            self.height = size
 
     def __str__(self):
         """Method fot anulate __str__"""
         return("[Square] ({}) {}/{} - {}".format(self.id,
-                                                 self.x, self.y, self.width))
+                self.x, self.y, self.width))
