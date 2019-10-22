@@ -37,8 +37,8 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """Method for update class square with *args **kwargs"""
         new_list = ['id', 'size', 'x', 'y']
-        new_dict = {'id': 'id', 'width': '_Rectangle__width', 'height'
-                    : '_Rectangle__height', 'x': '_Rectangle__x', 'y':
+        new_dict = {'id': 'id', 'width': '_Rectangle__width', 'height':
+                    '_Rectangle__height', 'x': '_Rectangle__x', 'y':
                     '_Rectangle__y'}
 
         for num, val in enumerate(args):
