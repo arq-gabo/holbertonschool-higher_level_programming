@@ -31,12 +31,12 @@ class Rectangle(Base):
         """Method for update class Rectangle with *args"""
         new_list = ["id", "_Rectangle__width", "_Rectangle__height",
                     "_Rectangle__x", "_Rectangle__y"]
-        
+
         for num, val in enumerate(args):
             self.__dict__[new_list[num]] = val
 
-        new_dict = {'id': 'id', 'width': '_Rectangle__width', 'height'
-                    : '_Rectangle__height', 'x': '_Rectangle__x', 'y':
+        new_dict = {'id': 'id', 'width': '_Rectangle__width', 'height':
+                    '_Rectangle__height', 'x': '_Rectangle__x', 'y':
                     '_Rectangle__y'}
 
         for key, value in kwargs.items():
@@ -111,3 +111,14 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         else:
             self.__y = y
+
+    def to_dictionary(self):
+        """Method for return rectangle dictionary"""
+        new_dict = {'id': 'id', 'width': '_Rectangle__width', 'height':
+                    '_Rectangle__height', 'x': '_Rectangle__x', 'y':
+                    '_Rectangle__y'}
+
+        nw_dic = {}
+        for key, value in new_dict.items():
+            nw_dic[key] = self.__dict__[value]
+        return nw_dic
