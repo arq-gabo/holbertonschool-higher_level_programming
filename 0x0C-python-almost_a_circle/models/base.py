@@ -24,8 +24,7 @@ class Base:
         """Method for standar format of JSON"""
         base_list = []
         if list_dictionaries is None or len(list_dictionaries) is 0:
-            list_dictionaries = []
-            return list_dictionaries
+            return []
         if type(list_dictionaries) is not list:
             base_list.append(list_dictionaries)
         else:
@@ -45,3 +44,11 @@ class Base:
 
         with open("{}.json".format(cls.__name__), "w", encoding='utf-8') as f:
             f.write(cls.to_json_string(new_list))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Which returns the list of the JSON string representation"""
+        if json_string is None or json_string == []:
+            return []
+        else:
+            return json.loads(json_string)
