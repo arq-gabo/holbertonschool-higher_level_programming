@@ -28,20 +28,11 @@ class Rectangle(Base):
             print(" " * self.__x + "#" * self.__width)
 
     def update(self, *args, **kwargs):
-        """Method for update class Rectangle with *args"""
-        new_list = ["id", "_Rectangle__width", "_Rectangle__height",
-                    "_Rectangle__x", "_Rectangle__y"]
+        """Method for assigns an argument to each attribute"""
+        new_list = ['id', 'width', 'height', 'x', 'y']
+        for i for range(len(args)):
+            setattr(self, new_list[i], args[i])
 
-        new_dict = {'id': 'id', 'width': '_Rectangle__width', 'height':
-                    '_Rectangle__height', 'x': '_Rectangle__x', 'y':
-                    '_Rectangle__y'}
-
-        if args:
-            for num, val in enumerate(args):
-                self.__dict__[new_list[num]] = val
-        else:
-            for key, value in kwargs.items():
-                self.__dict__[new_dict[key]] = value
 
     def __str__(self):
         """Metod for anulate __str__"""
