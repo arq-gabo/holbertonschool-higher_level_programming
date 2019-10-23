@@ -5,6 +5,7 @@
 
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -103,3 +104,30 @@ class Base:
                     row[key] = int(value)
                 new_list.append(cls.create(**row))
         return new_list
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        gabo = turtle.Screen()
+        gabo.bgcolor("grey")
+        gabo_turtle = turtle.Turtle()
+        gabo_turtle.color("white")
+
+        for a in list_rectangles:
+            gabo_turtle.up()
+            gabo_turtle.goto(rectangle.x, rectangle.y)
+            gabo_turtle.down()
+            for b in range(2):
+                gabo_turtle.forward(a.width)
+                gabo_turtle.left(90)
+                gabo_turtle.forward(a.height)
+                gabo.left(90)
+
+        for c in list_square:
+            gabo_turtle.up()
+            gabo_turtle.goto(rectangle.x, rectangle.y)
+            gabo.down()
+            for c in range(4):
+                gabo_turtle.foward(c.width)
+                gabo_turtle.left(90)
+                gabo_turtle.foward(c.width)
+        turtle.done()
