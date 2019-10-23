@@ -4,6 +4,7 @@
 """Module Base"""
 
 import json
+import csv
 
 
 class Base:
@@ -78,3 +79,27 @@ class Base:
         for new_dict in new_list:
             list_obj.append(cls.create(**new_dict))
         return list_obj
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Method for serializes in CSV:"""
+        for i in list_objs:
+            new_list = i.to_dictionary()
+        with open("{}.csv".format(cls.__name__), "w", encoding='utf-8') as f:
+            list_key = new_list.keys()
+            n_list = csv.DictWriter(f, list_key)
+            n_list.writeheader()
+            for j in list_objs:
+                n_list.writerow(j.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Method for desserializes in CSV"""
+        new_list = []
+        with open("{}.csv".format(cls.__name__), "r", encoding='utf-8') as f:
+            a = csv.DictReader(f)
+            for row in a:
+                for key, value in row.items():
+                    row[key] = int(value)
+                new_list.append(cls.create(**row))
+        return new_list
