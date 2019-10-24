@@ -24,15 +24,10 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """Method for standar format of JSON"""
-        base_list = []
-        if list_dictionaries is None or len(list_dictionaries) is 0:
-            return []
-        if type(list_dictionaries) is not list:
-            base_list.append(list_dictionaries)
-        else:
-            base_list = list_dictionaries
+        if list_dictionaries is None or not list_dictionaries:
+            return "[]"
 
-        return json.dumps(base_list)
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -50,10 +45,10 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """Which returns the list of the JSON string representation"""
-        if json_string is None or json_string == []:
-            return []
-        else:
-            return json.loads(json_string)
+        if json_string is None or not json_string:
+            return "[]"
+        
+        return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
