@@ -31,8 +31,8 @@ class Rectangle(Base):
         """Method for assigns an argument to each attribute"""
         new_list = ['id', 'width', 'height', 'x', 'y']
         if args:
-            for i for range(len(args)):
-                setattr(self, new_list[i], args[i])
+            for j in range(len(args)):
+                setattr(self, new_list[j], args[j])
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
