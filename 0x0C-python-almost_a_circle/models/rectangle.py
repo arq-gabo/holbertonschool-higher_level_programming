@@ -30,8 +30,12 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """Method for assigns an argument to each attribute"""
         new_list = ['id', 'width', 'height', 'x', 'y']
-        for i for range(len(args)):
-            setattr(self, new_list[i], args[i])
+        if args:
+            for i for range(len(args)):
+                setattr(self, new_list[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
 
     def __str__(self):
