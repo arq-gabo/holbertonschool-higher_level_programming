@@ -14,13 +14,11 @@ if __name__ == "__main__":
                                 db=sys.argv[3],
                                 host='localhost',
                                 port=3306)
-    val_state = sys.argv[4]
-
     myCursor = data_base.cursor()
 
     myCursor.execute("SELECT * FROM states \
                       WHERE name = '{}'\
-                      ORDER BY id ASC".format(val_state))
+                      ORDER BY id ASC".format(sys.argv[4]))
 
     values_db = myCursor.fetchall()
 
