@@ -22,4 +22,5 @@ if __name__ == "__main__":
     for val_db in valuesDb:
         print(val_db)
 
+    myCursor.close()
     data_base.close()
