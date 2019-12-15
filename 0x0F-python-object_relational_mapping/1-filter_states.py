@@ -2,8 +2,10 @@
 
 """Module"""
 
+
 import MySQLdb
 import sys
+
 
 if __name__ == "__main__":
     """connection with database"""
@@ -15,11 +17,11 @@ if __name__ == "__main__":
 
     myCursor = data_base.cursor()
 
-    myCursor.execute("""SELECT * FROM states 
+    myCursor.execute("""SELECT * FROM states
                       WHERE name LIKE 'N%'
                       ORDER BY id ASC""")
 
-    valuesDb = myCursor.fetchall()  
+    valuesDb = myCursor.fetchall()
 
     for val_db in valuesDb:
         print(val_db)
