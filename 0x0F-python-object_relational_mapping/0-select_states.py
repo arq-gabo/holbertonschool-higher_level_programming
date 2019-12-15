@@ -7,10 +7,11 @@ import sys
 
 if __name__ == "__main__":
     """connection with database"""
-    data_base = MySQLdb.connect(host='localhost',
-                                user='root',
-                                passwd='1234',
-                                db='hbtn_0e_0_usa')
+    data_base = MySQLdb.connect(user=sys.argv[1],
+                                passwd=sys.argv[2],
+                                db=sys.argv[3],
+                                host='localhost',
+                                port=3306)
 
     myCursor = data_base.cursor()
 
@@ -20,7 +21,5 @@ if __name__ == "__main__":
 
     for val_db in valuesDb:
         print(val_db)
-
-    data_base.commit()
 
     data_base.close()
