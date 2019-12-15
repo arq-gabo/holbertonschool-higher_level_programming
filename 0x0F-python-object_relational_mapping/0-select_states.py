@@ -3,21 +3,24 @@
 """Module"""
 
 import MySQLdb
+import sys
 
-data_base = MySQLdb.connect(host='localhost',
-                            user='root',
-                            passwd='1234',
-                            db='hbtn_0e_0_usa')
+if __name__ == "__main__":
+    """connection with database"""
+    data_base = MySQLdb.connect(host='localhost',
+                                user='root',
+                                passwd='1234',
+                                db='hbtn_0e_0_usa')
 
-myCursor = data_base.cursor()
+    myCursor = data_base.cursor()
 
-myCursor.execute("SELECT * FROM hbtn_0e_0_usa.states ORDER BY id ASC")
+    myCursor.execute("SELECT * FROM hbtn_0e_0_usa.states ORDER BY id ASC")
 
-valuesDb = myCursor.fetchall()
+    valuesDb = myCursor.fetchall()
 
-for val_db in valuesDb:
-    print(val_db)
+    for val_db in valuesDb:
+        print(val_db)
 
-data_base.commit()
+    data_base.commit()
 
-data_base.close()
+    data_base.close()
