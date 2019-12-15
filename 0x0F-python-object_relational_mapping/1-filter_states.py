@@ -21,9 +21,8 @@ if __name__ == "__main__":
                       WHERE name LIKE 'N%' \
                       ORDER BY states.id ASC")
 
-    valuesDb = myCursor.fetchall()
 
-    for val_db in valuesDb:
+    for val_db in myCursor:
         print(val_db)
 
     myCursor.close()
