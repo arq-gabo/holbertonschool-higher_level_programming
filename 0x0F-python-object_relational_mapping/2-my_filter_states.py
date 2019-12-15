@@ -26,7 +26,7 @@ if __name__ == "__main__":
     values_db = myCursor.fetchall()
 
     for val_db in values_db:
-        print(val_db)
+        print('{}'.format(val_db))
 
     myCursor.close()
     data_base.close()
