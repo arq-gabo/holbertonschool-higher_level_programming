@@ -14,19 +14,17 @@ if __name__ == "__main__":
                                 db=sys.argv[3],
                                 host='localhost',
                                 port=3306)
-
     val_state = sys.argv[4]
 
     myCursor = data_base.cursor()
 
     myCursor.execute("SELECT * FROM states \
-                      WHERE name = '{}'\
-                      ORDER BY states.id ASC".format(val_state))
+                      WHERE name = '{}'".format(val_state))
 
     values_db = myCursor.fetchall()
 
     for val_db in values_db:
-        print('{}'.format(val_db))
+        print(val_db)
 
     myCursor.close()
     data_base.close()
