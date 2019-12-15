@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     myCursor.execute("SELECT * FROM states \
                       WHERE name LIKE BINARY %s\
-                      ORDER BY id ASC;", (sys.argv[4]))
+                      ORDER BY id ASC", (sys.argv[4],))
 
     values_db = myCursor.fetchall()
 
