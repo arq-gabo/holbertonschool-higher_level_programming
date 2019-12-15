@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     myCursor = data_base.cursor()
 
-    myCursor.execute("SELECT * FROM hbtn_0e_0_usa.states ORDER BY id ASC")
+    myCursor.execute("SELECT * FROM states ORDER BY id ASC")
 
     valuesDb = myCursor.fetchall()
 
