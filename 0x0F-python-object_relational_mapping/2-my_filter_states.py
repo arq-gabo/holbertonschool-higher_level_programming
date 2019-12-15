@@ -19,7 +19,8 @@ if __name__ == "__main__":
     myCursor = data_base.cursor()
 
     myCursor.execute("SELECT * FROM states \
-                      WHERE name = '{}'".format(val_state))
+                      WHERE name = '{}'\
+                      ORDER BY id ASC".format(val_state))
 
     values_db = myCursor.fetchall()
 
