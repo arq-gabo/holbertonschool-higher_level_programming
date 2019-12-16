@@ -24,11 +24,17 @@ if __name__ == "__main__":
 
     values_db = myCursor.fetchall()
 
-    for i in range(len(values_db)):
-        if i == len(values_db) - 1:
-            print(values_db[i][0])
-        else:
-            print('{}, '.format(values_db[i][0]), end='')
+    list = []
+    for data in values_db:
+        for x in data:
+            list.append(x)
+    print(', '.join(list))
+
+#    for i in range(len(values_db)):
+#        if i == len(values_db) - 1:
+#            print(values_db[i][0])
+#        else:
+#            print('{}, '.format(values_db[i][0]), end='')
 
     myCursor.close()
     data_base.close()
