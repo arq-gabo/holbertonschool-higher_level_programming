@@ -19,7 +19,8 @@ if __name__ == "__main__":
     myCursor.execute("SELECT cities.name\
                       FROM cities WHERE cities.state_id =\
                       (SELECT id FROM states\
-                      WHERE name = %s) ORDER BY cities.id ASC;", (sys.argv[4],))
+                      WHERE name = %s)\
+                      ORDER BY cities.id ASC;", (sys.argv[4], ))
 
     values_db = myCursor.fetchall()
 
