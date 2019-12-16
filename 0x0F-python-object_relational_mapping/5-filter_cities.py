@@ -17,10 +17,10 @@ if __name__ == "__main__":
     myCursor = data_base.cursor()
 
     myCursor.execute("SELECT cities.name\
-                      FROM cities WHERE cities.state_id =\
+                      FROM cities WHERE state_id =\
                       (SELECT id FROM states\
                       WHERE name = %s)\
-                      ORDER BY cities.id ASC;", (sys.argv[4], ))
+                      ORDER BY cities.id ASC;", (sys.argv[4],))
 
     values_db = myCursor.fetchall()
 
