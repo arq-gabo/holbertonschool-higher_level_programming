@@ -28,7 +28,8 @@ if __name__ == "__main__":
 
     session.commit()
 
-    add_id = session.query(State).filter(State.name.like('%Louisiana%')).first()
+    add_id = session.query(State).filter\
+             (State.name.like('%Louisiana%')).first()
 
     if add_id:
         print(add_id.id)
