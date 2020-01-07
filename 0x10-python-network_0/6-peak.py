@@ -14,9 +14,9 @@ def find_peak(list_of_integers):
 
     if leng_list is 0:
         return None
-    else:
-        for a in range(leng_list):
-            if list_of_integers[a] > max_val:
-                max_val = list_of_integers[a]
+
+    for a in range(leng_list):
+        if list_of_integers[a] > max_val:
+            max_val = list_of_integers[a]
 
     return max_val
