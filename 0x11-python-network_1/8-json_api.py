@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     url = 'http://0.0.0.0:5000/search_user'
     r = requests.post(url, data={'q': val})
-    
+
     try:
         valid = len(r.json())
         if valid:
