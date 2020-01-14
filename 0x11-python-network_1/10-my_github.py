@@ -12,9 +12,9 @@ import requests
 
 if __name__ == "__main__":
 
-    url = "https://api.github.com/users/"
     users = sys.argv[1]
     passw = sys.argv[2]
+    url = "https://api.github.com/users/{}".format(users)
     r = requests.get(url, auth=(users, passw))
     d = r.json()
-    print(d.get('id'))
+    print(d.get("id"))
