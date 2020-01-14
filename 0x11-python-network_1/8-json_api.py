@@ -10,14 +10,13 @@ import sys
 
 if __name__ == "__main__":
 
-    url = 'http://0.0.0.0:5000/search_user'
-
     try:
         val = sys.argv[1]
     except:
         val = ''
 
     r = requests.post(url, data={'q': val})
+    url = 'http://0.0.0.0:5000/search_user'
 
     try:
         valid = len(r.json())
@@ -28,4 +27,4 @@ if __name__ == "__main__":
             print("No result")
 
     except:
-        print("Not a Valid JSON")
+        print("Not a valid JSON")
