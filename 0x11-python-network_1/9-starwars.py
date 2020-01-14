@@ -11,7 +11,6 @@ import sys
 
 if __name__ == "__main__":
 
-
     url = 'https://swapi.co/api/people/'
 
     sw = {"search": sys.argv[1]}
