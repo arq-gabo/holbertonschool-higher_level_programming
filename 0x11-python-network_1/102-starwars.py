@@ -27,7 +27,7 @@ if __name__ == "__main__":
                 print("\t{}".format(data.get('title')))
 
         while json_data.get('next') is not None:
-            payl2 = {'search': sys.argv[1], 'page': page}
+            payl2 = {'search': sys.argv[1], 'page': pag}
             response = requests.get(url, params=payl2)
             json_data = response.json()
 
@@ -35,7 +35,7 @@ if __name__ == "__main__":
                 print(result.get('name'))
                 for c in result.get('films'):
                     respons = requests.get(c)
-                    data = resp.json()
+                    data = respons.json()
                     print("\t{}".format(data.get('title')))
 
             pag = pag + 1
